@@ -35,21 +35,23 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         String os = System.getProperty("os.name");
         log.info(os);
-        if (os.toLowerCase().startsWith("win")) {  //如果是Windows系统
+//        if (os.toLowerCase().startsWith("win")) {  //如果是Windows系统
 
             registry.addResourceHandler("/pic/**")
                     // /apple/**表示在磁盘apple目录下的所有资源会被解析为以下的路径
                     .addResourceLocations("file:" + picPath);//媒体资源
             registry.addResourceHandler("swagger-ui.html")
                     .addResourceLocations("classpath:/META-INF/resources/");//swagger2页面
+            registry.addResourceHandler("/webjars/**")
+                .addResourceLocations("classpath:/META-INF/resources/webjars/");
             registry.addResourceHandler("/music/**")
-                    // /apple/**表示在磁盘apple目录下的所有资源会被解析为以下的路径
+                    // /music/**表示在磁盘apple目录下的所有资源会被解析为以下的路径
                     .addResourceLocations("file:" + musicPath); //媒体资源
-        } else {  //linux 和mac
-            registry.addResourceHandler("/smallapple/**")
-                    .addResourceLocations("file:/resources/smallapple/")   //媒体资源
-                    .addResourceLocations("classpath:/META-INF/resources/");  //swagger2页面;
-        }
+//        } else {  //linux 和mac
+//            registry.addResourceHandler("/smallapple/**")
+//                    .addResourceLocations("file:/resources/smallapple/")   //媒体资源
+//                    .addResourceLocations("classpath:/META-INF/resources/");  //swagger2页面;
+//        }
 //        registry.addResourceHandler("/image/**").addResourceLocations("file:F:/*");
     }
 

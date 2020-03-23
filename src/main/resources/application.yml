@@ -7,8 +7,8 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: 123456
-    url: jdbc:mysql://localhost:3306/demo?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&serverTimezone=UTC
-
+#    url: jdbc:mysql://localhost:3306/demo?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&serverTimezone=UTC
+    url: jdbc:mysql://47.100.45.138:3306/demo?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&serverTimezone=UTC
 
 
 #swagger的相关配置
@@ -50,8 +50,8 @@ file:
   picPath: F:\pic\
   musicPath: F:\music\
   #linux下地址
-#  picPath: F:\pic\
-#  musicPath: F:\music\
+#  picPath: /usr/local/file/pic/
+#  musicPath: /usr/local/file/music/
 
 
 
